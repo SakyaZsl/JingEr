@@ -15,4 +15,43 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <Button
+        android:text="今天涨价了么"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/btn_how_much"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:text="今天吃啥子呢"
+        app:layout_constraintTop_toBottomOf="@+id/btn_how_much"
+        android:id="@+id/btn_eat_what"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+
+    <Button
+        android:text="今天喝啥哟"
+        app:layout_constraintTop_toBottomOf="@+id/btn_eat_what"
+        android:id="@+id/btn_drink_what"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:text="今天玩什么游戏"
+        app:layout_constraintTop_toBottomOf="@+id/btn_drink_what"
+        android:id="@+id/btn_play_what"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+
+    <Button
+        android:text="今天out or bed"
+        app:layout_constraintTop_toBottomOf="@+id/btn_play_what"
+        android:id="@+id/btn_enjoy_what"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
