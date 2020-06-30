@@ -26,7 +26,7 @@ class MusicActivity :AppCompatActivity() {
             }
         }
         btn_play.setOnClickListener(listener)
-        val bean=BaseBean(18,"川建国")
+        val bean= BaseBean(18,"川建国")
         Log.e(TAG,"姓名是${bean.name}年龄是${bean.age}")
     }
 

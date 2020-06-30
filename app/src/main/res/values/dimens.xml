@@ -1,0 +1,18 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="margin_left_small">10dp</dimen>
+<!--    移植日历-->
+    <dimen name="smaller_space">3dp</dimen>
+    <dimen name="edge_space">15dp</dimen>
+    <dimen name="week_bar_height">36dp</dimen>
+    <dimen name="drawable_padding_normal">5dp</dimen>
+    <dimen name="medium_margin">15dp</dimen>
+    <integer name="calendar_text_size">15</integer>
+
+    <dimen name="text_size_normal">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_larger">16sp</dimen>
+    <dimen name="text_size_big">20sp</dimen>
+    <dimen name="text_size_title">18sp</dimen>
+
+</resources>

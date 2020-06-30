@@ -40,7 +40,7 @@ class EatActivity :AppCompatActivity(),View.OnClickListener{
         list.add("吃面面")
         mAdapter= EatWhatAdapter2(list,this)
         rv_eat_what.adapter=mAdapter
-        rv_eat_what.layoutManager=LinearLayoutManager(this)
+        rv_eat_what.layoutManager= LinearLayoutManager(this)
     }
 
 
