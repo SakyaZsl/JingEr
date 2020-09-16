@@ -1,47 +1,49 @@
 package com.zlj.jinger.activity
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zlj.jinger.R
 import com.zlj.jinger.adapter.EatWhatAdapter2
 import kotlinx.android.synthetic.main.activity_eat.*
 
-class EatActivity :AppCompatActivity(),View.OnClickListener{
+class EatActivity :AppCompatActivity(){
 
-    var  mAdapter:EatWhatAdapter2?=null
+    companion object{
+        fun startAction(context: Context){
+            val intent= Intent(context,EatActivity::class.java)
+            context.startActivity(intent)
+        }
+    }
+
+    private var  mAdapter:EatWhatAdapter2?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_eat)
-        iv_back.setOnClickListener(this)
+        iv_back.setOnClickListener{
+            finish()
+        }
         initView()
     }
 
-    override fun onClick(v: View?) {
-        when(v?.id){
-            R.id.iv_back->{
-                finish()
-            }
-            else->{
-
-            }
-        }
-    }
-
-    fun initView(){
-        val list:ArrayList<String> = ArrayList()
+    private fun initView(){
+        val list:MutableList<String> = ArrayList()
         list.add("吃烤串")
         list.add("吃串串")
         list.add("吃饭饭")
         list.add("吃面面")
-        mAdapter= EatWhatAdapter2(list,this)
+        mAdapter= EatWhatAdapter2(this,list)
         rv_eat_what.adapter=mAdapter
         rv_eat_what.layoutManager= LinearLayoutManager(this)
     }
 
+
+    fun test(){
+
+    }
 
 }

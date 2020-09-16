@@ -10,7 +10,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_width="50dp"
-        android:src="@mipmap/ic_launcher"
+        android:padding="15dp"
+        android:src="@drawable/me_fg_right_arrows"
         android:layout_height="50dp"/>
 
 

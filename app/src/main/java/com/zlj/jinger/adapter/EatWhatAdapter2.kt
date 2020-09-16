@@ -8,14 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.zlj.jinger.R
 
-class EatWhatAdapter2 (): RecyclerView.Adapter<EatWhatAdapter2.MyViewHolder>() {
-    var mDataList:List<String>?=null
-    var context:Context?=null
+class EatWhatAdapter2 (var context: Context,var mDataList: List<String>): RecyclerView.Adapter<EatWhatAdapter2.MyViewHolder>() {
 
-    constructor(mDataList: List<String>?, context: Context?) : this() {
-        this.mDataList = mDataList
-        this.context = context
-    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -31,11 +25,11 @@ class EatWhatAdapter2 (): RecyclerView.Adapter<EatWhatAdapter2.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.tv_eat_what.setText(mDataList!!.get(position))
+        holder.tv_eat_what.text= mDataList[position]
     }
 
      class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        var tv_eat_what=itemView!!.findViewById<TextView>(R.id.tv_eat_what)
+        var tv_eat_what=itemView.findViewById<TextView>(R.id.tv_eat_what)
     }
 
 

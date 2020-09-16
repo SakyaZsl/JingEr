@@ -45,4 +45,11 @@
         android:layout_height="50dp"/>
 
 
+    <TextView
+        android:text="今天out or bed"
+        app:layout_constraintTop_toBottomOf="@+id/btn_enjoy_what"
+        android:id="@+id/tvTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
