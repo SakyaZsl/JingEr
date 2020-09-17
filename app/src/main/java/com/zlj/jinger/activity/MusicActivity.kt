@@ -1,29 +1,52 @@
 package com.zlj.jinger.activity
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.zlj.jinger.R
+import com.zlj.jinger.adapter.MusicAdapter
 import com.zlj.jinger.bean.BaseBean
-
+import com.zlj.jinger.bean.Song
+import com.zlj.jinger.viewmodel.NetViewModel
+import kotlinx.android.synthetic.main.activity_music.*
 
 
 class MusicActivity :AppCompatActivity() {
     val TAG="zzzz"
-
-    val mMusicList= listOf("有何不可","泸州月","玫瑰花的葬礼","素颜","羡慕","清明雨上","如果当时","雅俗共享","断桥残雪","多余的解释","灰色头像","幻听")
-    val mIdealList= listOf("有何不可","泸州月","玫瑰花的葬礼","素颜","羡慕")
+    private var mAdapter:MusicAdapter ?=null
+    private var mDataList:MutableList<Song> =ArrayList()
+    companion object{
+        fun startAction(context: Context){
+            val intent= Intent(context,MusicActivity::class.java)
+            context.startActivity(intent)
+        }
+    }
+    private val viewModels by lazy {
+        ViewModelProviders.of(this).get(NetViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_eat)
+        setContentView(R.layout.activity_music)
         initView()
     }
 
 
     private fun initView(){
-        val bean= BaseBean(18,"川建国")
-        Log.e(TAG,"姓名是${bean.name}年龄是${bean.age}")
+        viewModels.getMusicList("许嵩")
+        viewModels.musicLiveData.observe(this, Observer {
+            mDataList.addAll(it)
+            mAdapter?.notifyDataSetChanged()
+        })
+        mAdapter= MusicAdapter(this,mDataList)
+        rvMusic.adapter=mAdapter
+        rvMusic.layoutManager=LinearLayoutManager(this)
+
     }
 
 
