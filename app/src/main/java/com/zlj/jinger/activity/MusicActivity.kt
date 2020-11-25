@@ -14,6 +14,10 @@ import com.zlj.jinger.bean.BaseBean
 import com.zlj.jinger.bean.Song
 import com.zlj.jinger.viewmodel.NetViewModel
 import kotlinx.android.synthetic.main.activity_music.*
+import kotlinx.coroutines.CoroutineStart
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class MusicActivity :AppCompatActivity() {
@@ -34,6 +38,7 @@ class MusicActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_music)
         initView()
+        test()
     }
 
 
@@ -49,6 +54,18 @@ class MusicActivity :AppCompatActivity() {
 
     }
 
+
+    fun  test(){
+        GlobalScope.launch {
+            Log.e(TAG, "test: ${Thread.currentThread().name}" )
+        }
+        GlobalScope.launch(Dispatchers.IO,CoroutineStart.DEFAULT) {
+            Log.e(TAG, "test: ${Thread.currentThread().name}" )
+        }
+        GlobalScope.launch(Dispatchers.Main,CoroutineStart.DEFAULT) {
+            Log.e(TAG, "test: ${Thread.currentThread().name}" )
+        }
+    }
 
 
 }

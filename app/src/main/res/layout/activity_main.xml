@@ -4,59 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    >
 
 
-    <Button
-        android:text="今天涨价了么"
+    <FrameLayout
+        android:id="@+id/layoutContent"
         app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/btn_how_much"
+        app:layout_constraintBottom_toBottomOf="@+id/viewLine"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="0dp"></FrameLayout>
 
-    <Button
-        android:text="今天吃啥子呢"
-        app:layout_constraintTop_toBottomOf="@+id/btn_how_much"
-        android:id="@+id/btn_eat_what"
+
+    <View
+        android:id="@+id/viewLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="58dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:background="@color/text_color_dark"
+        android:layout_height="1dp"/>
 
 
-    <Button
-        android:text="今天喝啥哟"
-        app:layout_constraintTop_toBottomOf="@+id/btn_eat_what"
-        android:id="@+id/btn_drink_what"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+   <LinearLayout
+       app:layout_constraintBottom_toBottomOf="parent"
+       android:layout_width="match_parent"
+       android:orientation="horizontal"
+       android:layout_height="55dp">
 
-    <Button
-        android:text="今天玩什么游戏"
-        app:layout_constraintTop_toBottomOf="@+id/btn_drink_what"
-        android:id="@+id/btn_play_what"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+       <LinearLayout
+           android:id="@+id/llHomeEat"
+           style="@style/home_ll_bottom">
+           <ImageView
+               android:id="@+id/ivHomeEat"
+               android:src="@drawable/selector_home_eat"
+               style="@style/home_iv_bottom"/>
 
-
-    <Button
-        android:text="今天out or bed"
-        app:layout_constraintTop_toBottomOf="@+id/btn_play_what"
-        android:id="@+id/btn_enjoy_what"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+           <TextView
+               android:id="@+id/tvHomeEat"
+               android:text="吃"
+               style="@style/home_tv_bottom"
+               />
 
 
-    <Button
-        android:text="今天听啥歌"
-        app:layout_constraintTop_toBottomOf="@+id/btn_enjoy_what"
-        android:id="@+id/btn_listen_what"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+       </LinearLayout>
 
-    <TextView
-        android:text="今天out or bed"
-        app:layout_constraintTop_toBottomOf="@+id/btn_listen_what"
-        android:id="@+id/tvTest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+       <LinearLayout
+           android:id="@+id/llHomeDrink"
+           style="@style/home_ll_bottom"
+           >
+           <ImageView
+               android:id="@+id/ivHomeDrink"
+               android:src="@drawable/selector_home_drink"
+               style="@style/home_iv_bottom"/>
+
+           <TextView
+               android:text="喝"
+               android:id="@+id/tvHomeDrink"
+               style="@style/home_tv_bottom"/>
+
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:id="@+id/llHomePlay"
+           style="@style/home_ll_bottom">
+           <ImageView
+               android:id="@+id/ivHomePlay"
+               android:src="@drawable/selector_home_play"
+               style="@style/home_iv_bottom"/>
+
+           <TextView
+               android:text="玩"
+               android:id="@+id/tvHomePlay"
+               style="@style/home_tv_bottom"/>
+
+
+       </LinearLayout>
+
+       <LinearLayout
+           android:id="@+id/llHomeEnjoy"
+           style="@style/home_ll_bottom">
+           <ImageView
+               android:id="@+id/ivHomeEnjoy"
+               android:src="@drawable/selector_home_enjoy"
+               style="@style/home_iv_bottom"/>
+
+           <TextView
+               android:text="乐"
+               android:id="@+id/tvHomeEnjoy"
+               style="@style/home_tv_bottom"/>
+
+
+       </LinearLayout>
+
+
+
+   </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
