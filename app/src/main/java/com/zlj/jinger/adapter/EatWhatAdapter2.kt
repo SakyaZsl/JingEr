@@ -10,8 +10,6 @@ import com.zlj.jinger.R
 
 class EatWhatAdapter2 (var context: Context,var mDataList: List<String>): RecyclerView.Adapter<EatWhatAdapter2.MyViewHolder>() {
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         var view=LayoutInflater.from(context).inflate(R.layout.item_ear_what,parent,false)
         return MyViewHolder(view)
@@ -31,8 +29,6 @@ class EatWhatAdapter2 (var context: Context,var mDataList: List<String>): Recycl
      class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var tv_eat_what=itemView.findViewById<TextView>(R.id.tv_eat_what)
     }
-
-
 
 
 }
