@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zlj.jinger.R
+import com.zlj.jinger.activity.LuckyActivity
 import com.zlj.jinger.adapter.EatAdapter
 import kotlinx.android.synthetic.main.fragment_drink.*
 import kotlinx.android.synthetic.main.fragment_eat.*
@@ -19,6 +20,9 @@ class DrinkFragment :Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        btnDrink.setOnClickListener {
+            LuckyActivity.startAction(requireContext(),1)
+        }
         initAdapter()
     }
 

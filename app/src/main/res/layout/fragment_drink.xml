@@ -7,8 +7,18 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnDrink"
         android:id="@+id/rvDrinkWhat"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"/>
+
+    <Button
+        android:id="@+id/btnDrink"
+        android:layout_marginTop="8dp"
+        android:text="随机选"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

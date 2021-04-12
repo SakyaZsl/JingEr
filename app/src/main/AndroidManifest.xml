@@ -65,6 +65,7 @@
         <activity android:name=".activity.EatActivity"/>
         <activity android:name=".activity.AnimalActivity"/>
         <activity android:name=".activity.MusicActivity"/>
+        <activity android:name=".activity.LuckyActivity"/>
     </application>
 
 

@@ -1,6 +1,7 @@
 package com.zlj.jinger.activity
 
 import android.os.Bundle
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
@@ -14,10 +15,7 @@ import com.zlj.jinger.fragment.PlayGameFragment
 import com.zlj.jinger.network.RetrofitClient
 import com.zlj.jinger.viewmodel.NetViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import retrofit2.await
 
 class MainActivity :AppCompatActivity() {
@@ -41,6 +39,7 @@ class MainActivity :AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
+        test2(100,100)
     }
 
 
@@ -67,6 +66,15 @@ class MainActivity :AppCompatActivity() {
 
     private fun test(){
         viewModels.getData()
+        GlobalScope.launch {
+            withContext(Dispatchers.IO){
+
+            }
+
+        }
+        CoroutineScope(Dispatchers.IO).launch {
+
+        }
     }
 
 
@@ -139,6 +147,18 @@ class MainActivity :AppCompatActivity() {
         }
         _transaction?.commitAllowingStateLoss()
 
+    }
+
+
+    fun process(x: Int, y: Int, operate: (Int, Int) -> Int) {
+        println(operate(x, y))
+    }
+
+
+    fun test2(x:Int ,y:Int ){
+        process(x,y){a:Int ,b:Int ->
+           a+b
+        }
     }
 
 }

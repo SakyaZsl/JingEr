@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zlj.jinger.R
+import com.zlj.jinger.activity.LuckyActivity
 import com.zlj.jinger.adapter.EatAdapter
 import kotlinx.android.synthetic.main.fragment_enjoy.*
 import kotlinx.android.synthetic.main.fragment_play.*
@@ -18,6 +19,9 @@ class PlayGameFragment:Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        btnPlay.setOnClickListener {
+            LuckyActivity.startAction(requireContext(),2)
+        }
         initAdapter()
     }
 
