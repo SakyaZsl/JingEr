@@ -1,9 +1,7 @@
 package com.zlj.jinger.activity
 
 import android.os.Bundle
-import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -12,11 +10,12 @@ import com.zlj.jinger.fragment.DrinkFragment
 import com.zlj.jinger.fragment.EatFragment
 import com.zlj.jinger.fragment.EnjoyFragment
 import com.zlj.jinger.fragment.PlayGameFragment
+import com.zlj.jinger.network.ApiService
 import com.zlj.jinger.network.RetrofitClient
 import com.zlj.jinger.viewmodel.NetViewModel
+import com.zlj.network.MyRetrofitClient
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
-import retrofit2.await
 
 class MainActivity :AppCompatActivity() {
     companion object{
@@ -151,7 +150,7 @@ class MainActivity :AppCompatActivity() {
 
 
     fun process(x: Int, y: Int, operate: (Int, Int) -> Int) {
-        println(operate(x, y))
+        val api=MyRetrofitClient.getRetrofitClient("",ApiService::class.java)
     }
 
 
